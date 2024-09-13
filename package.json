@@ -1,0 +1,16 @@
+{
+  "name": "playwright-devops",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "tests": "playwright test --config=playwright.config.ts --project==chromium"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@playwright/test": "^1.47.0",
+    "@types/node": "^22.5.4"
+  }
+}
