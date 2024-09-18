@@ -1,0 +1,8 @@
+<testsuites id="" name="" tests="2" failures="0" skipped="0" errors="0" time="8.178420000000001">
+<testsuite name="example.spec.ts" timestamp="2024-09-18T13:52:39.617Z" hostname="chromium" tests="2" failures="0" skipped="0" time="8.825" errors="0">
+<testcase name="has title" classname="example.spec.ts" time="4.263">
+</testcase>
+<testcase name="get started link" classname="example.spec.ts" time="4.562">
+</testcase>
+</testsuite>
+</testsuites>

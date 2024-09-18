@@ -29,9 +29,9 @@ steps:
       testResultsFiles: "e2e-junit-results.xml"
       mergeTestResults: true
       failTaskOnFailedTests: true
-      testRunTitle: "My End-To-End Tests"
+      testRunTitle: "End-To-End Tests"
     condition: succeededOrFailed()
-    
+
   - task: PublishPipelineArtifact@1
     inputs:
       targetPath: playwright-report
