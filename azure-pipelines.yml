@@ -16,12 +16,8 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
-    npm install && npx playwright install
-  displayName: 'npm install && npx playwright install'
-
-- script: |
-    playwright install
-  displayName: 'npm install -D @playwright/test@latest'   
+    npm install && npx playwright install --with-deps
+  displayName: 'npm install' 
 
 - script: 
     npm run tests
