@@ -23,10 +23,12 @@ steps:
     npm run tests
   displayName: 'run the playwright tests' # Run the "tests" script defined in package.json
 
-- task: PublishTestResults@2
+- task: PublishPipelineArtifact@1
   inputs:
-    testResultsFiles: '**/test-results/**/*.xml'  # Publish Playwright test results if generated in JUnit format.
-    testRunTitle: 'Chromium Tests'
+    targetPath: playwright-report
+    artifact: playwright-report
+    publishLocation: 'pipeline'
+  condition: succeededOrFailed()
     
 
 
