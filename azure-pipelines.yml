@@ -21,7 +21,7 @@ steps:
 
 - script: |
     playwright install
-  displayName: 'npx playwright install chromium'   
+  displayName: 'npm install -D @playwright/test@latest'   
 
 - script: 
     npm run tests
