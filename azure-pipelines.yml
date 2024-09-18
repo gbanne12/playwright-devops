@@ -17,14 +17,16 @@ steps:
 
 - script: |
     npm install
-    npm run build
-  displayName: 'npm install and build'
+  displayName: 'npm install'
 
-- script: |
-    npx playwright install
-  displayName: 'install playwright'
+- script: 
+    npm run tests
+  displayName: 'run the playwright tests' # Run the "tests" script defined in package.json
 
-- task: Npm@1
+- task: PublishTestResults@2
   inputs:
-    command: 'custom'
-    customCommand: 'run tests'
+    testResultsFiles: '**/test-results/**/*.xml'  # Publish Playwright test results if generated in JUnit format.
+    testRunTitle: 'Chromium Tests'
+    
+
+
