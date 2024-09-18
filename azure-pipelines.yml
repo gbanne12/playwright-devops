@@ -19,6 +19,10 @@ steps:
     npm install
   displayName: 'npm install'
 
+- script: |
+    playwright install
+  displayName: 'npx playwright install chromium'   
+
 - script: 
     npm run tests
   displayName: 'run the playwright tests' # Run the "tests" script defined in package.json
