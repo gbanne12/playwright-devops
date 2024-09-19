@@ -4,6 +4,9 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
+variables:
+- group: demoVariables # the name of the variable group added in Azure DevOps
+
 steps:
   - task: NodeTool@0
     inputs:
@@ -16,10 +19,14 @@ steps:
   - script: npx playwright install --with-deps
     displayName: "Install Playwright browsers"
 
+  - script: export EXAMPLE=$(EXAMPLE)
+    displayName: "Export environment variables for use in the test"
+
   - script: npx playwright test
     displayName: "Run Playwright tests"
     env:
       CI: "true"
+      EXAMPLE: $(EXAMPLE)
 
   - task: PublishTestResults@2
     displayName: "Publish test results"

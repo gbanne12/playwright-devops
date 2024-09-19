@@ -16,3 +16,13 @@ test('get started link', async ({ page }) => {
   // Expects page to have a heading with the name of Installation.
   await expect(page.getByRole('heading', { name: 'Installation' })).toBeVisible();
 });
+
+test('use environment variable in pipeline', async({page}) => {
+  const url = process.env.EXAMPLE;
+
+  if (typeof url === 'string') {
+    await page.goto(url);
+  }
+
+  await expect(page.getByRole('heading', {name: "Example Domain"})).toBeVisible();
+});
