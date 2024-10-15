@@ -2,7 +2,7 @@
 
 Setup for playwright to run on Azure Devops pipeline. 
 
-Example test maks use on an environment variable that is added to DevOps through the web interface. 
+Example test makes use of an environment variable that is added to DevOps through the web interface. 
 
 Playwright reporters and pipeline configured to display reporting artifacts following test run 
 
