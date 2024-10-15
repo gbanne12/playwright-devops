@@ -19,7 +19,7 @@ steps:
   - script: npx playwright install --with-deps
     displayName: "Install Playwright browsers"
 
-  - script: export EXAMPLE=$(EXAMPLE)
+  - script: export EXAMPLE=$(EXAMPLE)   # env variable named 'EXAMPLE' added to DevOps at Pipelines > Library with above group name 
     displayName: "Export environment variables for use in the test"
 
   - script: npx playwright test
@@ -33,7 +33,7 @@ steps:
     inputs:
       searchFolder: "test-results"
       testResultsFormat: "JUnit"
-      testResultsFiles: "e2e-junit-results.xml"
+      testResultsFiles: "e2e-junit-results.xml"  # matches value set in playwright.config.ts
       mergeTestResults: true
       failTaskOnFailedTests: true
       testRunTitle: "End-To-End Tests"
